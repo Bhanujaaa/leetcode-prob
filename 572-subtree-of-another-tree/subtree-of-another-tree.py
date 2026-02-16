@@ -23,11 +23,7 @@ class Solution:
             return True
         elif not root and subRoot:
             return False
-        elif root.val==subRoot.val:
+        if root.val==subRoot.val:
             if sameTree(root,subRoot):
                 return True
-            else:
-                return self.isSubtree(root.right, subRoot) or self.isSubtree(root.left,subRoot)
-                
-        else:
-            return self.isSubtree(root.right, subRoot) or self.isSubtree(root.left,subRoot)
+        return self.isSubtree(root.right, subRoot) or self.isSubtree(root.left,subRoot)
